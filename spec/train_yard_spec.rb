@@ -3,7 +3,7 @@ require './lib/train'
 require './lib/train_yard'
 
 RSpec.describe TrainYard do
-  before :all do
+  before :each do
     @train_yard = TrainYard.new({location: 'Brighton'})
 
     @car1 = Car.new({type: 'Mail', weight: 5})
@@ -43,7 +43,7 @@ RSpec.describe TrainYard do
   end
 
   describe 'methods' do
-    before :all do
+    before :each do
       @train_yard.add_train(@train1)
       @train_yard.add_train(@train2)
       @train_yard.add_train(@train3)
@@ -52,6 +52,10 @@ RSpec.describe TrainYard do
 
     it 'can add trains' do
       expect(@train_yard.trains).to eq([@train1, @train2, @train3, @train4])
+    end
+
+    it 'can list types of trains' do
+      expect(@train_yard.types_of_trains).to eq(['Express', 'Tank', 'Tender'])
     end
   end
 end
