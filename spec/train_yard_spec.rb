@@ -21,7 +21,7 @@ RSpec.describe TrainYard do
     @train2.add_cars(@car1, 3)
     @train2.add_cars(@car4, 4)
 
-    @train3.add_cars(@car1, 1)
+    @train3.add_cars(@car1, 4)
 
     @train4.add_cars(@car4, 5)
     @train4.add_cars(@car3, 10)
@@ -63,6 +63,15 @@ RSpec.describe TrainYard do
 
     it 'can return a sorted cargo list' do
       expect(@train_yard.sorted_cargo_list).to eq(['Cattle', 'Dining', 'Mail'])
+    end
+
+    it 'can create a total inventory hash' do
+      expected = {
+                  @car1 => 12,
+                  @car3 => 10,
+                  @car4 => 9
+                 }
+      expect(@train_yard.total_inventory).to eq(expected)
     end
   end
 end
