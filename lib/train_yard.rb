@@ -42,4 +42,9 @@ class TrainYard
     end
     hash
   end
+
+  def overflow_cars #incomplete
+    cars = total_inventory.find_all do |car, quantity|
+    end
+  end
 end

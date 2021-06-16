@@ -73,5 +73,9 @@ RSpec.describe TrainYard do
                  }
       expect(@train_yard.total_inventory).to eq(expected)
     end
+
+    it 'can list overflowing cars' do
+      expect(@train_yard.overflow_cars).to eq([@car1])
+    end
   end
 end
