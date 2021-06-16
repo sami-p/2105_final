@@ -31,6 +31,10 @@ RSpec.describe TrainYard do
   describe 'instantiation' do
     it 'exists' do
       expect(@train_yard).to be_an_instance_of(TrainYard)
-    end 
+    end
+
+    it 'has attributes' do
+      expect(@train_yard.location).to eq('Brighton')
+    end
   end
 end
