@@ -11,5 +11,10 @@ RSpec.describe Train do
     it 'exists' do
       expect(@train1).to be_an_instance_of(Train)
     end
+
+    it 'has attributes' do
+      expect(@train1.name).to eq('Thomas')
+      expect(@train1.type).to eq('Tank')
+    end
   end
 end
