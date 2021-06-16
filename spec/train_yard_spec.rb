@@ -17,7 +17,6 @@ RSpec.describe TrainYard do
     @train4 = Train.new({name: 'Gordon', type: 'Express'})
 
     @train1.add_cars(@car1, 5)
-    @train1.add_cars(@car2, 2)
 
     @train2.add_cars(@car1, 3)
     @train2.add_cars(@car4, 4)
@@ -60,6 +59,10 @@ RSpec.describe TrainYard do
 
     it 'can list trains containing a given car' do
       expect(@train_yard.trains_containing(@car1)).to eq([@train1, @train2, @train3])
+    end
+
+    it 'can return a sorted cargo list' do
+      expect(@train_yard.sorted_cargo_list).to eq(['Cattle', 'Dining', 'Mail'])
     end
   end
 end
