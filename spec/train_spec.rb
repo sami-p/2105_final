@@ -21,4 +21,10 @@ RSpec.describe Train do
       expect(@train1.cargo).to eq({})
     end
   end
+
+  describe 'methods' do
+    it 'can count number of given car' do
+      expect(@train1.count_cars(@car1)).to eq(0)
+    end
+  end
 end
