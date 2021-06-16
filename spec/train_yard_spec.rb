@@ -49,7 +49,7 @@ RSpec.describe TrainYard do
       @train_yard.add_train(@train3)
       @train_yard.add_train(@train4)
     end
-    
+
     it 'can add trains' do
       expect(@train_yard.trains).to eq([@train1, @train2, @train3, @train4])
     end

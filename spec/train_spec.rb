@@ -2,7 +2,7 @@ require './lib/car'
 require './lib/train'
 
 RSpec.describe Train do
-  before :all do
+  before :each do
     @train1 = Train.new({name: 'Thomas', type: 'Tank'})
     @car1 = Car.new({type: 'Mail', weight: 5})
     @car2 = Car.new({type: 'Passengers', weight: 1})
@@ -41,6 +41,15 @@ RSpec.describe Train do
       @train1.add_cars(@car2, 10)
 
       expect(@train1.cargo).to eq({@car1 => 5, @car2 => 10})
+    end
+  end
+
+  describe 'weight method' do
+    it 'can calculate total weight of train' do
+      @train1.add_cars(@car1, 5)
+      @train1.add_cars(@car2, 2)
+
+      expect(@train1.weight).to eq(27)
     end
   end
 end
