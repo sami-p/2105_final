@@ -32,6 +32,15 @@ RSpec.describe Train do
 
       expect(@train1.cargo).to eq({@car1 => 2})
       expect(@train1.count_cars(@car1)).to eq(2)
+
+      @train1.add_cars(@car1, 3)
+
+      expect(@train1.cargo).to eq({@car1 => 5})
+      expect(@train1.count_cars(@car1)).to eq(5)
+
+      @train1.add_cars(@car2, 10)
+
+      expect(@train1.cargo).to eq({@car1 => 5, @car2 => 10})
     end
   end
 end
