@@ -36,5 +36,9 @@ RSpec.describe TrainYard do
     it 'has attributes' do
       expect(@train_yard.location).to eq('Brighton')
     end
+
+    it 'begins with empty trains array' do
+      expect(@train_yard.trains).to eq([])
+    end
   end
 end
