@@ -20,6 +20,16 @@ class TrainYard
   def trains_containing(car)
     @trains.find_all do |train|
       train.cargo.include?(car)
-    end 
+    end
+  end
+
+  def sorted_cargo_list
+    types = []
+    @trains.each do |train|
+      train.cargo.each do |car, quantity|
+        types << car.type
+      end
+    end
+    types.uniq.sort
   end
 end
