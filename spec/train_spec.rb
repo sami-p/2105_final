@@ -16,5 +16,9 @@ RSpec.describe Train do
       expect(@train1.name).to eq('Thomas')
       expect(@train1.type).to eq('Tank')
     end
+
+    it 'begins with an empty cargo hash' do
+      expect(@train1.cargo).to eq({})
+    end
   end
 end
