@@ -57,5 +57,9 @@ RSpec.describe TrainYard do
     it 'can list types of trains' do
       expect(@train_yard.types_of_trains).to eq(['Express', 'Tank', 'Tender'])
     end
+
+    it 'can list trains containing a given car' do
+      expect(@train_yard.trains_containing(@car1)).to eq([@train1, @train2, @train3])
+    end
   end
 end
